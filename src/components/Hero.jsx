@@ -2,10 +2,14 @@ import { motion } from 'framer-motion'
 import { FiArrowRight } from 'react-icons/fi'
 
 const Hero = () => {
+    const hurl = "h.jpg";
   return (
     <section className="relative h-screen flex items-center justify-center bg-gray-100 overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('h.jpg')] bg-cover bg-center opacity-70"></div>
+      <div 
+  className="absolute inset-0 bg-cover bg-center opacity-70"
+  style={{ backgroundImage: `url(${hurl})` }}
+></div>
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-40"></div>

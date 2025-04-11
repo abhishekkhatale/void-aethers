@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="relative h-screen flex items-center justify-center bg-gray-100 overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center opacity-70"></div>
+      <div className="absolute inset-0 bg-[url('herogate.jpg')] bg-cover bg-center opacity-70"></div>
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-40"></div>

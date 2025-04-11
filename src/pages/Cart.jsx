@@ -9,7 +9,7 @@ const Cart = () => {
       name: "Modern Steel Gate",
       price: 1299,
       quantity: 1,
-      image: "https://images.unsplash.com/photo-1600566752229-250ed79470a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "p1.jpg",
       material: "Steel",
       delivery: "Standard (5-7 business days)"
     },
@@ -18,7 +18,7 @@ const Cart = () => {
       name: "Aluminum Fencing (20ft)",
       price: 850,
       quantity: 2,
-      image: "https://images.unsplash.com/photo-1600566752229-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "p2.jpg",
       material: "Aluminum",
       delivery: "Express (2-3 business days)"
     }
@@ -30,7 +30,7 @@ const Cart = () => {
   const total = subtotal + shipping + tax
 
   return (
-    <div className="bg-gray-50 min-h-screen py-12">
+    <div className="bg-gray-50 min-h-screen py-12 pt-20">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Cart Items */}

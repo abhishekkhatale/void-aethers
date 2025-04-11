@@ -10,7 +10,7 @@ const Blog = () => {
       date: "June 15, 2023",
       author: "John Smith",
       category: "Gates",
-      image: "https://images.unsplash.com/photo-1600566752229-250ed79470a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "p1.jpg",
       readTime: "5 min read"
     },
     {
@@ -20,7 +20,7 @@ const Blog = () => {
       date: "May 28, 2023",
       author: "Sarah Johnson",
       category: "Automation",
-      image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "p2.jpg",
       readTime: "4 min read"
     },
     {
@@ -30,7 +30,7 @@ const Blog = () => {
       date: "April 12, 2023",
       author: "Michael Chen",
       category: "Maintenance",
-      image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "p3.jpg",
       readTime: "6 min read"
     },
     {
@@ -40,7 +40,7 @@ const Blog = () => {
       date: "March 22, 2023",
       author: "Emily Rodriguez",
       category: "Design",
-      image: "https://images.unsplash.com/photo-1600566752229-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "p4.jpg",
       readTime: "7 min read"
     },
     {
@@ -50,7 +50,7 @@ const Blog = () => {
       date: "February 18, 2023",
       author: "John Smith",
       category: "Security",
-      image: "https://images.unsplash.com/photo-1600566753190-250ed79470a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "p5.jpg",
       readTime: "8 min read"
     },
     {
@@ -60,7 +60,7 @@ const Blog = () => {
       date: "January 5, 2023",
       author: "Sarah Johnson",
       category: "Materials",
-      image: "https://images.unsplash.com/photo-1600566752355-250ed79470a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      image: "p6.jpg",
       readTime: "6 min read"
     }
   ]
@@ -102,7 +102,7 @@ const Blog = () => {
                 <img 
                   src={blogPosts[0].image} 
                   alt={blogPosts[0].title} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-[500px] object-cover"
                 />
               </div>
               <div className="md:w-1/2 p-8">

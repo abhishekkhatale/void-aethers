@@ -6,55 +6,55 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: 'https://images.unsplash.com/photo-1600566752229-250ed79470a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+      src: 'p1.jpg',
       title: 'Modern Steel Gate Installation',
       category: 'gates'
     },
     {
       id: 2,
-      src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+      src: 'p2.jpg',
       title: 'Wrought Iron Fence Project',
       category: 'fencing'
     },
     {
       id: 3,
-      src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+      src: 'p3.jpg',
       title: 'Automatic Gate Opener',
       category: 'openers'
     },
     {
       id: 4,
-      src: 'https://images.unsplash.com/photo-1600566752229-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+      src: 'p4.jpg',
       title: 'Aluminum Railing System',
       category: 'railings'
     },
     {
       id: 5,
-      src: 'https://images.unsplash.com/photo-1600566753190-250ed79470a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+      src: 'p5.jpg',
       title: 'Security Fence Panel',
       category: 'fencing'
     },
     {
       id: 6,
-      src: 'https://images.unsplash.com/photo-1600566752355-250ed79470a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+      src: 'p6.jpg',
       title: 'Wooden Privacy Fence',
       category: 'fencing'
     },
     {
       id: 7,
-      src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+      src: 'p7.jpg',
       title: 'Custom Driveway Gate',
       category: 'gates'
     },
     {
       id: 8,
-      src: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+      src: 'p8.jpg',
       title: 'Commercial Chain Link Fence',
       category: 'fencing'
     },
     {
       id: 9,
-      src: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80',
+      src: 'p6.jpg',
       title: 'Residential Security Gate',
       category: 'gates'
     }

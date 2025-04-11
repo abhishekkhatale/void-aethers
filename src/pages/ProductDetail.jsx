@@ -1,24 +1,74 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FiShoppingCart, FiHeart, FiShare2, FiChevronLeft } from 'react-icons/fi'
-import { Link, useParams } from 'react-router-dom'
-import products from '../data/products.json'
+import { Link } from 'react-router-dom'
+import ProductCard from '../components/ProductCard' 
 
 const ProductDetail = () => {
-  const { id } = useParams()
-  const product = products.find(p => p.id === parseInt(id))
   const [selectedImage, setSelectedImage] = useState(0)
   const [quantity, setQuantity] = useState(1)
 
-  if (!product) {
-    return <div className="container mx-auto px-4 py-12 text-center">Product not found</div>
+  // Static product data
+  const product = {
+    id: 1,
+    name: "Premium Steel Gate",
+    category: "gates",
+    price: 599.99,
+    originalPrice: 749.99,
+    discount: 20,
+    rating: 4,
+    reviews: 24,
+    material: "steel",
+    type: "security gate",
+    description: "Our premium steel gate offers both security and style for your property. Made from high-quality materials with a durable finish that resists rust and corrosion.",
+    image: "p4.jpg"
   }
 
   const images = [
     product.image,
-    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1600566752229-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    "p1.jpg",
+    "p2.jpg",
+    "p3.jpg"
+  ]
+
+  // Static related products data
+  const relatedProducts = [
+    {
+      id: 2,
+      name: "Ornamental Iron Gate",
+      category: "gates",
+      price: 699.99,
+      rating: 5,
+      reviews: 18,
+      image: "p1.jpg"
+    },
+    {
+      id: 3,
+      name: "Modern Aluminum Gate",
+      category: "gates",
+      price: 549.99,
+      rating: 4,
+      reviews: 12,
+      image: "p2.jpg"
+    },
+    {
+      id: 4,
+      name: "Classic Wrought Iron Gate",
+      category: "gates",
+      price: 799.99,
+      rating: 4,
+      reviews: 22,
+      image: "p3.jpg"
+    },
+    {
+      id: 5,
+      name: "Contemporary Steel Gate",
+      category: "gates",
+      price: 649.99,
+      rating: 5,
+      reviews: 15,
+      image: "p4.jpg"
+    }
   ]
 
   return (
@@ -241,17 +291,14 @@ const ProductDetail = () => {
         <div className="mt-12">
           <h2 className="text-2xl font-bold mb-6">Related Products</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products
-              .filter(p => p.id !== product.id && p.category === product.category)
-              .slice(0, 4)
-              .map(relatedProduct => (
-                <motion.div
-                  key={relatedProduct.id}
-                  whileHover={{ y: -5 }}
-                >
-                  <ProductCard product={relatedProduct} />
-                </motion.div>
-              ))}
+            {relatedProducts.map(relatedProduct => (
+              <motion.div
+                key={relatedProduct.id}
+                whileHover={{ y: -5 }}
+              >
+                <ProductCard product={relatedProduct} />
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

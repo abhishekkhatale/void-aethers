@@ -1,6 +1,56 @@
 import { motion } from 'framer-motion'
 import { FiAward, FiUsers, FiHome, FiShield } from 'react-icons/fi'
 
+// Animation variants for consistent transitions
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      when: "beforeChildren"
+    }
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+}
+
+const fadeInVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.8 }
+  }
+}
+
+const slideInVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
+}
+
+const slideInRightVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
+}
+
 const About = () => {
   const stats = [
     { value: '18+', label: 'Years Experience', icon: <FiAward className="w-8 h-8" /> },
@@ -43,15 +93,22 @@ const About = () => {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600566752229-250ed79470a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center opacity-30"></div>
         <div className="container mx-auto px-4 relative text-center">
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInVariants}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
             About GatesNFences
           </motion.h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <motion.p 
+            initial="hidden"
+            animate="visible"
+            variants={fadeInVariants}
+            transition={{ delay: 0.2 }}
+            className="text-xl text-gray-300 max-w-2xl mx-auto"
+          >
             Crafting security and elegance for your property since 2005
-          </p>
+          </motion.p>
         </div>
       </div>
 
@@ -60,10 +117,9 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              
+              viewport={{ once: true, margin: "-100px" }}
+              variants={slideInVariants}
               className="lg:w-1/2"
             >
               <img 
@@ -73,10 +129,9 @@ const About = () => {
               />
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              
+              viewport={{ once: true, margin: "-100px" }}
+              variants={slideInRightVariants}
               className="lg:w-1/2"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
@@ -91,10 +146,17 @@ const About = () => {
                 that stand the test of time. Our team of skilled artisans takes pride in every weld, every 
                 cut, and every installation, ensuring your property is both secure and aesthetically pleasing.
               </p>
-              <div className="grid grid-cols-2 gap-6">
+              <motion.div 
+                className="grid grid-cols-2 gap-6"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={containerVariants}
+              >
                 {stats.map((stat, index) => (
                   <motion.div
                     key={index}
+                    variants={itemVariants}
                     whileHover={{ y: -5 }}
                     className="bg-gray-50 p-4 rounded-lg text-center"
                   >
@@ -105,7 +167,7 @@ const About = () => {
                     <p className="text-gray-600">{stat.label}</p>
                   </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -115,10 +177,10 @@ const About = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            variants={fadeInVariants}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
@@ -127,12 +189,15 @@ const About = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+          >
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+              variants={itemVariants}
               className="bg-white p-6 rounded-lg shadow-sm"
             >
               <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
@@ -147,10 +212,7 @@ const About = () => {
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              variants={itemVariants}
               className="bg-white p-6 rounded-lg shadow-sm"
             >
               <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
@@ -165,10 +227,7 @@ const About = () => {
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              variants={itemVariants}
               className="bg-white p-6 rounded-lg shadow-sm"
             >
               <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
@@ -183,10 +242,7 @@ const About = () => {
             </motion.div>
             
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              variants={itemVariants}
               className="bg-white p-6 rounded-lg shadow-sm"
             >
               <div className="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
@@ -199,7 +255,7 @@ const About = () => {
                 We're proud to support local businesses and give back to the communities we serve.
               </p>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -207,10 +263,10 @@ const About = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            variants={fadeInVariants}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
@@ -219,14 +275,18 @@ const About = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+          >
             {team.map((member, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                variants={itemVariants}
+                whileHover={{ y: -8, transition: { duration: 0.2 } }}
                 className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
               >
                 <img 
@@ -241,7 +301,7 @@ const About = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -249,10 +309,10 @@ const About = () => {
       <section className="py-16 bg-orange-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            variants={fadeInVariants}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Secure Your Property?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
